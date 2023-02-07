@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- <uses-feature android:name="android.hardware.camera.autofocus" /> -->
+    <!--
+<uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+    -->
+    <uses-feature android:name="android.hardware.camera" /> <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera2.full" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- //sticker -->
+    <uses-permission android:name="com.android.providers.media.MediaProvider" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".application.SessionManager"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="HardcodedDebugMode">
+        <activity
+            android:name=".ForgetPass"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.Showing_Followers_List"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Music_FromApp"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Verify_OTP"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Registration"
+            android:exported="true" />
+        <activity android:name=".activity.ForgetPass"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.MyProfile_Activity"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.Search_activity"
+            android:exported="true" />
+        <activity android:name=".activity.DeviceVideoListActivity" />
+        <activity android:name=".activity.KEditVideoActivity" />
+        <activity
+            android:name=".activity.LibraryUploadVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.VideoEditorDemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.KVideoEditorDemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MergeVideoAudioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PlayEditedVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EditVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UploadVideoForPerticularMusicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MusicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".adapter.PlayVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UploadVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OtpScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:screenOrientation="portrait" /> <!-- third party lib activity -->
+        <activity
+            android:name=".effect.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".effect.BaseCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".effect.PlayerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".effect.CameraSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".effect.PortraitCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".effect.Mp4ComposeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".effect.LandscapeCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ShareVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PrivacySettingActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".backgroundservice.BackgroundSoundService" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" /> <!-- FCM NOTIFICATION SERVICE -->
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <service
+            android:name=".FirbaseNotification.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

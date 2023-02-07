@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.efunhub.ticktok.activity.UploadVideoForPerticularMusicActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:cardCornerRadius="3dp"-->
+<!--                app:cardElevation="3dp"-->
+<!--                app:cardUseCompatPadding="true"-->
+<!--                tools:ignore="MissingConstraints">-->
+<!--<RelativeLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    >-->
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="130dp"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:src="@color/gray"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:src="@drawable/musicplayer" />-->
+
+<!--</RelativeLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1.5"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:orientation="vertical"-->
+<!--                >-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Lorem Ipsum Lorem Ipsum lorem"-->
+<!--                    />-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="1235 Posts"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:textColor="@color/txtclr"-->
+<!--                    />-->
+<!--            </LinearLayout>-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="45sp"
+                    android:paddingLeft="5sp"
+                    android:hint="Search here"
+                    android:background="@drawable/white_rectangular_border"
+                    android:backgroundTint="@color/white"
+                    android:drawableLeft="@drawable/ic_search_black_24dp"
+                    android:drawablePadding="10sp"
+                    app:showAsAction="always"
+                    tools:ignore="MissingConstraints" />
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_width="wrap_content"
+                    android:layout_alignRight="@+id/searchView"
+                    android:layout_height="wrap_content"
+                    android:text="Search"
+                    android:layout_marginEnd="5sp"
+                    android:backgroundTint="@color/pink"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"/>
+
+                <Button
+                    android:id="@+id/btn_browse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Browse"
+                    android:layout_marginEnd="5sp"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/searchView"
+                    android:layout_alignParentEnd="true" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@+id/btn_browse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rv_search"/>
+
+                <TextView
+                    android:id="@+id/tv_no_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:layout_centerVertical="true"
+                    android:text="No search result found"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/relativeUploadVideo"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            >
+            <ImageView
+                android:id="@+id/btnStartVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_circle"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:src="@drawable/videocamera"
+                app:tint="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

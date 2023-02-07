@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#49BDB6</color>
+    <color name="lightprimary">#7AF1EA</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#f9b34c</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="txtclr">#A4000000</color>
+    <color name="gray">#A4B1AFAF</color>
+    <color name="red">#F44538</color>
+    <color name="pink">#F6436D</color>
+    <color name="lightgrey">#CCCBCB</color>
+
+
+</resources>

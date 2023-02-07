@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.efunhub.ticktok.activity.Search_activity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:paddingLeft="5sp"
+            android:hint="Search here"
+            android:background="@drawable/white_rectangular_border"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:drawablePadding="10sp"
+            app:showAsAction="always"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_alignRight="@+id/searchView"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_marginEnd="5sp"
+            android:backgroundTint="@color/pink"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rv_search"/>
+        <TextView
+            android:id="@+id/tv_no_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:text="No search result found"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

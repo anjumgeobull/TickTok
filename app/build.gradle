@@ -1,0 +1,174 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'ly.img.android.sdk'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+// Configure the IMGLYPlugin
+imglyConfig {
+
+    vesdk {
+        enabled true
+        licencePath 'vesdk_android_license.dms'
+    }
+
+    // Define the modules you are need
+    modules {
+        // Add all the UI modules you are need
+        include 'ui:video-trim'
+        include 'ui:core'
+        include 'ui:text'
+        include 'ui:focus'
+        include 'ui:frame'
+        include 'ui:brush'
+        include 'ui:filter'
+        include 'ui:camera'
+        include 'ui:sticker'
+        include 'ui:overlay'
+        include 'ui:transform'
+        include 'ui:adjustment'
+        include 'ui:text-design'
+
+        // Add the serializer if you need
+        include 'backend:serializer'
+
+        // Allow Background Encoding [Optional]
+        include 'backend:headless'
+
+        // Add asset packs if you need
+        include 'assets:font-basic'
+        include 'assets:frame-basic'
+        include 'assets:filter-basic'
+        include 'assets:overlay-basic'
+        include 'assets:sticker-shapes'
+        include 'assets:sticker-emoticons'
+        include 'assets:sticker-animated'
+
+        // Add animated sticker support
+        include 'backend:sticker-animated'
+
+        // Add smart sticker support
+        include 'backend:sticker-smart'
+    }
+}
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    signingConfigs {
+        release {
+        storeFile file('/G:/Geobull Project/Tick Tok/TickTok/tiktokkey.jks')
+            storePassword 'tiktokkey'
+            keyAlias 'tiktokkey'
+            keyPassword 'tiktokkey'
+        }
+    }
+    compileSdkVersion 31
+
+    defaultConfig {
+        applicationId "com.efunhub.ticktok"
+        minSdkVersion 23
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            crunchPngs false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+        debug {
+            debuggable true
+        }
+    }
+    buildFeatures(){
+        viewBinding true
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_6
+    }
+    namespace 'com.efunhub.ticktok'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.6'
+    //video effect
+    implementation 'com.github.MasayukiSuda:GPUVideo-android:v0.1.1'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //merge video
+    //FFmpeg Library(Working till android version 9)
+    //implementation 'com.writingminds:FFmpegAndroid:0.3.2'
+    //need minimum sdk 24
+   // implementation 'com.arthenica:mobile-ffmpeg-full:4.4'
+
+   // implementation 'com.arthenica:mobile-ffmpeg-full:4.2.2.LTS'
+
+   // implementation 'com.arthenica:mobile-ffmpeg-full:4.4.LTS'
+
+
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.4.LTS'
+    //implementation 'com.arthenica:mobile-ffmpeg-full-gpl:4.4.LTS'
+
+    implementation 'org.jcodec:jcodec-android:0.1.9'
+    implementation 'androidx.core:core-ktx:+'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'io.alterac.blurkit:blurkit:1.0.0'
+    implementation 'com.google.code.gson:gson:2.10'
+
+    //merge audio and video
+    implementation 'com.googlecode.mp4parser:isoparser:1.0.5.4'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
+
+
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.chaos.view:pinview:1.4.3'
+    implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.github.pedromassango:doubleClick:3.0'
+    //Image Picker
+    implementation 'com.github.Drjacky:ImagePicker:2.3.22'
+
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        >
+        <TextView
+            android:id="@+id/tvSaveProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/txtclr"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:text="Save" />
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_cancel"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:src="@drawable/userimg"
+            android:layout_gravity="center"
+            android:id="@+id/imgUser"
+            android:scaleType="fitXY"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingbutton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/imgUser"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="-30dp"
+            android:src="@drawable/ic_camera"
+            tools:ignore="MissingConstraints" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/str_name"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+        android:id="@+id/edtMobileNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/str_mobile_no"
+        android:layout_margin="5dp"
+        />
+    <EditText
+        android:id="@+id/edtMailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Id"
+        android:layout_margin="5dp"
+        />
+
+<!--    <EditText-->
+<!--        android:id="@+id/edtBio"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/str_bio"-->
+<!--        android:layout_margin="5dp"-->
+<!--        />-->
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/gray"-->
+<!--        android:layout_margin="5dp"-->
+<!--        />-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/llSelectGender"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:orientation="horizontal"-->
+<!--       android:weightSum="1">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/str_gender"-->
+<!--            android:layout_weight="0.3"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvGender"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Not specified"-->
+<!--            android:layout_weight="0.7"/>-->
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/gray"-->
+<!--        android:layout_margin="5dp"-->
+<!--        />-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/llSelectDateOfBirth"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="1">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/str_date_of_birth"-->
+<!--            android:layout_weight="0.3"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvDateofBirth"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Not specified"-->
+<!--            android:layout_weight="0.7"/>-->
+<!--    </LinearLayout>-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_margin="5dp"
+        />
+
+</LinearLayout>
